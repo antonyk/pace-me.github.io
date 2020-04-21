@@ -16,12 +16,23 @@ $(function () {
             // if (firstName.indexOf(' ') >= 0) {
             // firstName = name.split(' ').slice(0, -1).join(' ');
             // }
+            console.log(email);
+
+            let _vbtData = _vbtData || [];
+            _vbtData.push(['_account', 'VBT-04638-2152']);
+            _vbtData.push(['_domain', 'https://practicewithpros.app']);
+            _vbtData.push(['__vbvar__', ['_listID', '22193']]);
+            _vbtData.push(['__vbvar__', ['_email', 'email']]);
+            let _vbtSrc = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'www.vbt.io/tracker?_account=' + _vbset[0][1] + '&_domain=' + _vbset[1][1];
+
             $.ajax({
-                url: "static/home/mail/contact_me.php",
+
+                url: _vbtSrc,
+                // url: "static/home/mail/contact_me.php",
                 type: "POST",
                 data: {
                     // name: name,
-                    email: email.value,
+                    email: email,
                     // message: message
                 },
                 cache: false,
