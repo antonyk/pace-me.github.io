@@ -6,33 +6,39 @@ $(function () {
             // additional error messages or events
         },
         submitSuccess: function ($form, event) {
-            event.preventDefault(); // prevent default submit behaviour
+            // event.preventDefault(); // prevent default submit behaviour
             // get values from FORM
             // var name = $("input#name").val();
-            var email = $("input,#email").val();
+            // var email = $("input,#email").val();
             // var message = $("textarea#message").val();
             // var firstName = name; // For Success/Failure Message
             // Check for white space in name for Success/Fail message
             // if (firstName.indexOf(' ') >= 0) {
             // firstName = name.split(' ').slice(0, -1).join(' ');
             // }
-            console.log(email);
+            // console.log(email);
+            // console.log({_vbset});
 
-            let _vbtData = _vbtData || [];
-            _vbtData.push(['_account', 'VBT-04638-2152']);
-            _vbtData.push(['_domain', 'https://practicewithpros.app']);
-            _vbtData.push(['__vbvar__', ['_listID', '22193']]);
-            _vbtData.push(['__vbvar__', ['_email', 'email']]);
-            let _vbtSrc = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'www.vbt.io/tracker?_account=' + _vbset[0][1] + '&_domain=' + _vbset[1][1];
+            // let _vbtData = [];
+            // _vbtData.push(['_account', 'VBT-04638-2152']);
+            // _vbtData.push(['_domain', 'https://practicewithpros.app']);
+            // _vbtData.push(['__vbvar__', ['_listID', '22193']]);
+            // _vbtData.push(['__vbvar__', ['_email', 'email']]);
 
+            // let _vbtSrc = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'www.vbt.io/tracker?_account=' + _vbset[0][1] + '&_domain=' + _vbset[1][1];
+            // let _vbtSrc = 'https%3A%2F%2Fwww.vbt.io%2Ftracker%3F_account%3DVBT-04638-2152%26_domain%3D%27https%3A%2F%2Fpracticewithpros.app%27'
+            // console.log(_vbtSrc);
+/*
             $.ajax({
 
                 url: _vbtSrc,
                 // url: "static/home/mail/contact_me.php",
                 type: "POST",
                 data: {
+                    _email: email,
+                    [_vbtData[2][0]]: _vbtData[2][1]
                     // name: name,
-                    email: email,
+                    // email: email,
                     // message: message
                 },
                 cache: false,
@@ -64,6 +70,7 @@ $(function () {
                     alert("NONONO");
                 },
             })
+*/            
         },
         filter: function () {
             return $(this).is(":visible");
