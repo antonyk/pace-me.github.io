@@ -1,0 +1,1 @@
+importScripts("https://app.vbout.com/js/webpush/core/app/vbout-sw.js");
